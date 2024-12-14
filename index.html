@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <title>Stephan Wenninger</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="preconnect" href="https://rsms.me/">
+    <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+    <script defer src="assets/fontawesome/js/brands.min.js"></script>
+    <script defer src="assets/fontawesome/js/solid.min.js"></script>
+    <script defer src="assets/fontawesome/js/fontawesome.min.js"></script>
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
+    <link rel="manifest" href="assets/site.webmanifest">
+  </head>
+  <body>
+    <nav class="sidebar">
+      <h3 class="name">Stephan Wenninger</h3>
+      <img class="portrait" src="assets/portrait.jpg" alt="">
+      <div>
+        <p class="caption">
+          I'm a Ph.D. Student at </br>
+          <a href="https://cg.cs.tu-dortmund.de">TU Dortmund University</a></br> 
+        under the supervision of </br> 
+          <a href="https://cg.cs.tu-dortmund.de/people/botsch_mario.html">Prof. Dr. Mario Botsch</a>.  
+        </p>
+        </div>
+      <div class="social">
+        <a href="https://www.github.com/stephan-wenninger"><i class="fa-brands fa-github fa-3x"></i></a>
+        <a href="https://www.linkedin.com/in/stephan-wenninger"><i class="fa-brands fa-linkedin fa-3x"></i></a>
+      </div>
+      <div class="links">
+        <ul>
+          <li><a href="#demo">Demo</a></li>
+          <li><a href="#publications">Publications</a></li>
+          <li><a href="assets/cv/cv_en.pdf" target="_blank">Resumé</a></li>
+        </ul>
+      </div>
+    </nav>
+    <main>
+      <div class="row yellow">
+        <h2 id="demo">Virtual Human Demo</h2>
+        <p class="caption description">
+          During my time as a Ph.D. candidate, I developed a low-cost reconstruction method for realistic 3D avatars, a statistical model for body-weight modification to investigate the potential of <a href="https://hci.uni-wuerzburg.de/projects/vitras/" target="_blank">VR therapy in obesity treatment</a>, as well as anatomical representations of virtual humans.
+          Click the Load Demo button for an interactive application that showcases various parts of our virtual human reconstruction pipeline.
+        </p>
+        <div class="loading-wrapper">
+          <button class="load_demo_button button" id="load_demo">Load demo (66mb)</button>
+          <div class="lds-grid" id="loading" style="display:none"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>  
+        </div>
+        <script type="text/javascript">
+          var button = document.getElementById('load_demo');
+          button.onclick = function() {
+            document.getElementById("loading").style.display="inline-block"
+            document.getElementById("load_demo").style.display="none"
+            var script = document.createElement("script");
+            script.src = "assets/demos/AvatarDemo.js";
+    
+            // append and execute script
+            document.documentElement.firstChild.appendChild(script);
+          };
+        </script>
+        <div class="emscripten" id="status"></div>
+        <div id="canvas">
+          <canvas class="emscripten" id="canvas_canvas" oncontextmenu="event.preventDefault()"></canvas>
+        </div>
+        <!-- WebGL setup -->
+        <script type='text/javascript' src='assets/demos/emscripten_webgl_setup.js'></script>
+      </div>
+      <div class="row green">
+      <h2 id="publications">Publications</h2>
+      <div class="grid">
+        <article>
+          <img src="assets/pub-images/eg24-tailorme.jpg">
+          <div class="badges">
+            <span class="badge">2024</span>
+          </div>
+          <div class="text">
+            <span class="pub-title">TailorMe: Self-Supervised Learning of an Anatomically Constrained Volumetric Human Shape Model</span>
+            <span class="pub-authors">Stephan Wenninger, Fabian Kemper, Ulrich Schwanecke, Mario Botsch</span>
+            <span class="pub-journal cgf"></span>
+          </div>
+          <div class="action">
+            <a class="pub-doi" href="https://doi.org/10.1111/cgf.15046"><i class="fa-solid fa-link"></i> Go to article</a>
+          </div>
+        </article>
+        <article>
+          <img src="assets/pub-images/eccv24.jpg">
+          <div class="badges">
+            <span class="badge">2024</span>
+          </div>
+          <div class="text">
+            <span class="pub-title">GarmentCodeData: A Dataset of 3D Made-to-Measure Garments With Sewing Patterns</span>
+            <span class="pub-authors">Maria Korosteleva, Timur Levent Kesdogan, Fabian Kemper, Stephan Wenninger, Jasmin Koller, Yuhan Zhang, Mario Botsch, Olga Sorkine-Hornung</span>
+            <span class="pub-journal eccv"></span>
+          </div>
+          <div class="action">
+            <a class="pub-doi"><i class="fa-solid fa-broken-link"></i> To appear</a>
+          </div>
+        </article>
+        <article>
+          <img src="assets/pub-images/frontiers24-odd.jpg">
+          <div class="badges">
+            <span class="badge">2024</span>
+            </div>
+          <div class="text">
+            <span class="pub-title">Am I the Odd One? Exploring (In)Congruencies in the Realism of Avatars and Virtual Others in Virtual Reality</span>
+            <span class="pub-authors">David Mal, Nina Döllinger, Erik Wolf, Stephan Wenninger, Mario Botsch, Carolin Wienrich, Marc Erich Latoschik</span>
+            <span class="pub-journal frvr"></span>
+          </div>
+          <div class="action">
+            <a class="pub-doi" href="https://doi.org/10.3389/frvir.2024.1417066"><i class="fa-solid fa-link"></i> Go to article</a>
+          </div>
+        </article>
+        <article>
+          <img src="assets/pub-images/resize-me.jpg">
+          <div class="badges">
+            <span class="badge">2022</span>
+          </div>
+          <div class="text">
+            <span class="pub-title">Resize Me! Exploring the User Experience of Embodied Realistic Modulatable Avatars for Body Image Intervention in Virtual Reality</span>
+            <span class="pub-authors">Nina Döllinger, Erik Wolf, David Mal, Stephan Wenninger, Mario Botsch, Marc Erich Latoschik, Carolin Wienrich</span>
+            <span class="pub-journal frvr"></span>
+          </div>
+          <div class="action">
+            <a class="pub-doi" href="https://doi.org/10.3389/frvir.2022.935449"><i class="fa-solid fa-link"></i> Go to article</a>
+          </div>
+        </article>
+        <article>
+          <img src="assets/pub-images/distance.jpg">
+          <div class="badges">
+            <span class="badge">2022</span>
+          </div>
+          <div class="text">
+            <span class="pub-title">Does Distance Matter? Embodiment and Perception of Personalized Avatars in Relation to the Self-Observation Distance in Virtual Reality</span>
+            <span class="pub-authors">Erik Wolf, Nina Döllinger, David Mal, Stephan Wenninger, Andrea Bartl, Mario Botsch, Marc Erich Latoschik, Carolin Wienrich</span>
+            <span class="pub-journal frvr"></span>
+          </div>
+          <div class="action">
+            <a class="pub-doi" href="https://doi.org/10.3389/frvir.2022.1031093"><i class="fa-solid fa-link"></i> Go to article</a>
+          </div>
+        </article>
+        <article>
+          <img src="assets/pub-images/ismar22.jpg">
+          <div class="badges">
+            <span class="badge">2022</span>
+          </div>
+          <div class="text">
+            <span class="pub-title">Plausibility and Perception of Personalized Virtual Humans between Virtual and Augmented Reality</span>
+            <span class="pub-authors">Erik Wolf, David Mal, Viktor Frohnapfel, Nina Döllinger, Stephan Wenninger, Mario Botsch, Marc Erich Latoschik, Carolin Wienrich</span>
+            <span class="pub-journal ismar"></span>
+          </div>
+          <div class="action">
+            <a class="pub-doi" href="https://doi.org/10.1109/ISMAR55827.2022.00065"><i class="fa-solid fa-link"></i> Go to article</a>
+          </div>
+        </article>
+        <article>
+          <img src="assets/pub-images/insideHumans.jpg">
+          <div class="badges">
+            <span class="badge">2021</span>
+          </div>
+          <div class="text">
+            <span class="pub-title">Inside Humans: Creating a Simple Layered Anatomical Model from Human Surface Scans</span>
+            <span class="pub-authors">Martin Komaritzan, Stephan Wenninger, Mario Botsch</span>
+            <span class="pub-journal frvr"></span>
+          </div>
+          <div class="action">
+            <a class="pub-doi" href="https://doi.org/10.3389/frvir.2021.694244"><i class="fa-solid fa-link"></i> Go to article</a>
+          </div>
+        </article>
+        <article>
+          <img src="assets/pub-images/affordable.jpg">
+          <div class="badges">
+            <span class="badge">2021</span>
+          </div>
+          <div class="text">
+            <span class="pub-title">Affordable but not Cheap: A Case Study of the Effects of Two 3D-Reconstruction Methods of Virtual Humans</span>
+            <span class="pub-authors">Andrea Barl, Stephan Wenninger, Erik Wolf, Marc Erich Latoschik, Mario Botsch</span>
+            <span class="pub-journal frvr"></span>
+          </div>
+          <div class="action">
+            <a class="pub-doi" href="https://doi.org/10.3389/frvir.2021.694617"><i class="fa-solid fa-link"></i> Go to article</a>
+          </div>
+        </article>
+        <article>
+          <img src="assets/pub-images/vrst20.jpg">
+          <div class="badges">
+            <span class="badge">2020</span>
+          </div>
+          <div class="text">
+            <span class="pub-title">Realistic Virtual Humans from Smartphone Videos</span>
+            <span class="pub-authors">Stephan Wenninger, Jascha Achenbach, Andrea Bartl, Marc Eric Latoschik, Mario Botsch</span>
+            <span class="pub-journal vrst"></span>
+          </div>
+          <div class="action">
+            <a class="pub-doi" href="https://doi.org/10.1145/3385956.3418940"><i class="fa-solid fa-link"></i> Go to article</a>
+          </div>
+        </article>
+      </ul>
+    </div>
+    </main>
+  </body>
+</html>
