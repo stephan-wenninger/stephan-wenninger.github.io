@@ -2,8 +2,6 @@
 
 /* Variables */
 :root {
-  --link-color: #035397;
-  --link-hover-color: #5089C6;
   --frvr: "Frontiers in Virtual Reality";
   --vrst: "Virtual Reality Software and Technology (VRST)";
   --cgf: "Computer Graphics Forum\a(Proc. Eurographics)";
@@ -12,7 +10,14 @@
   --eccv: "Computer Vision \2014  ECCV";
   --row-padding: 10rem;
   --row-padding-vertical: 6rem;
-  --warm-yellow: rgba(255, 249, 223, 1)
+/*  --warm-yellow: rgba(255, 249, 223, 1);*/
+  --color-bg1: #fff8f8;
+  --color-bg2: #fffaf4;
+  --color-bg3: #fff5e8;
+  --color-highlight1: #ff8316;
+  --link-color: var(--color-highlight1);
+  --link-hover-color: #ffa95f;
+  --color-black: #242424;
 }
 
 .grid { 
@@ -52,7 +57,7 @@
 }
 
 .badge {
-  background: #035397;
+  background: var(--color-highlight1);
   padding: 0.5em 1em;
   border-radius: 23%;
   color: white;
@@ -99,7 +104,7 @@ article .action {
   height: auto;
   overflow-x: hidden;
   overflow-y: auto;
-  background-color: #fff;
+  background-color: var(--color-bg3);
   z-index: 999;
   -webkit-transition: left .2s linear;
   -o-transition: left .2s linear;
@@ -107,9 +112,9 @@ article .action {
 }
 
 .portrait {
-  height: 250px;
+  height: 225px;
   border-radius: 50%;
-  width: 250px;
+  width: 225px;
   object-fit: cover;
   margin: 4em auto;
   text-align: center;
@@ -151,37 +156,35 @@ div, p, pre, ol, ul, h1, h2, h3, h4, h5, h6 {
   align-items: flex-start;
 }
 
-.row.yellow {
-    background-color: var(--warm-yellow);
+.row.bg1 {
+    background-color: var(--color-bg1);
 }
 
-.row.green {
-  background-color: #f2f2f2;
-}
-
-canvas {
-  padding-left: 0.;
-  padding-right: 0;
-  margin: 0 auto;
-  display: block;
-  height: calc(100vh - 300px);
-}
-
-#canvascontainer {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
+.row.bg2 {
+  background-color: var(--color-bg2);
 }
 
 #canvas {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  height: 100%;
+  border: 0px none;
+  padding: 0px;
+  width:  100%;
+/*  height: 100%;*/
+  height: calc(100vh - 250px);
+  min-height: 350px;
 }
 
+canvas.emscripten {
+  margin: 0 auto;
+  border:           0px none;  /* no border, otherwise mouse coords will be wrong */
+  padding:          0px;       /* no padding, otherwise mouse coords will be wrong */
+  background-color: var(--color-bg1);
+  display:          block;
+  overflow:         hidden;    /* avoids scrollbars during loading */
+  height: calc(100vh - 250px);
+  min-height: 350px;
+  width: 100%;
+  border-radius: 4px;
+}
 
 .social {
   margin-top: 2em;
@@ -190,7 +193,7 @@ canvas {
 :root {
   font-family: Inter, sans-serif;
   font-feature-settings: 'liga' 1, 'calt' 1; /* fix for Chrome */
-  color: #242424;
+  color: var(--color-black);
 }
 @supports (font-variation-settings: normal) {
   :root { font-family: InterVariable, sans-serif; }
@@ -205,12 +208,12 @@ canvas {
   padding: 1rem 2rem;
   font-size: 0.875rem;
   line-height: 1;
-  font-weight: 500;
+  font-weight: 600;
   cursor: pointer;
   text-decoration: none;
   text-transform: uppercase;
-  background: #035397;
-  color: #eee;
+  background: var(--color-highlight1);
+  color: #fff;
 }
 .button:before, .button:after {
   content: "";
@@ -220,12 +223,12 @@ canvas {
 
 h2 {
   text-transform: uppercase;
-  font-weight: lighter;
+  font-weight: 200;
   font-size: 2.0rem;
   letter-spacing: 6px;
   padding: 1em;
   width: 100%;
-  border-left: #035397 7px solid;
+  border-left: var(--color-highlight1) 7px solid;
   margin-left: -65px;
 }
 
@@ -234,7 +237,7 @@ h2 {
 }
 
 .caption {
-  font-weight: lighter;
+  font-weight: 200;
 }
 
 .frvr {}
@@ -273,31 +276,6 @@ main {
   margin-left: 250px;
 }
 
-.emscripten {
-  padding-right: 0;
-  margin-left: auto;
-  margin-right: auto;
-  display: block;
-}
-
-div.emscripten {
-  text-align: center;
-}
-
-#canvas {
-  border: 0px none;
-  padding: 0px;
-  width:  100%;
-}
-
-canvas.emscripten {
-    border:           0px none;  /* no border, otherwise mouse coords will be wrong */
-    padding:          0px;       /* no padding, otherwise mouse coords will be wrong */
-    background-color: var(--warm-yellow);
-    display:          block;
-    overflow:         hidden;    /* avoids scrollbars during loading */
-}
-
 .pub-image {
   width: 30%;
   text-align: center;
@@ -322,10 +300,10 @@ canvas.emscripten {
 }
 
 .pub-title {
-  font-weight: bold;
+  font-weight: 600;
   display: block;
   margin-bottom: 2em;
-  color: #035397;
+  color: var(--color-black);
   height: 30%;
 }
 
@@ -344,7 +322,7 @@ canvas.emscripten {
   list-style: none;
   padding: 2em 0;
   text-transform: uppercase;
-  position: absolute;
+/*  position: absolute;*/
   bottom: 0;
 }
 
@@ -368,7 +346,7 @@ canvas.emscripten {
   width: 16px;
   height: 16px;
   border-radius: 50%;
-  background: #035397;
+  background: var(--color-highlight1);
   animation: lds-grid 1.2s linear infinite;
 }
 .lds-grid div:nth-child(1) {

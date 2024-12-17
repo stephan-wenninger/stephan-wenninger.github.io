@@ -27,49 +27,49 @@
           <a href="https://cg.cs.tu-dortmund.de/people/botsch_mario.html">Prof. Dr. Mario Botsch</a>.  
         </p>
         </div>
-      <div class="social">
-        <a href="https://www.github.com/stephan-wenninger"><i class="fa-brands fa-github fa-3x"></i></a>
-        <a href="https://www.linkedin.com/in/stephan-wenninger"><i class="fa-brands fa-linkedin fa-3x"></i></a>
-      </div>
       <div class="links">
         <ul>
           <li><a href="#demo">Demo</a></li>
           <li><a href="#publications">Publications</a></li>
-          <li><a href="assets/cv/cv_en.pdf" target="_blank">Resumé</a></li>
+          <li><a href="assets/cv/cv_en.pdf" target="_blank">Resumé <i class="fa-solid fa-external-link"></i></a></li>
         </ul>
+      <div class="social">
+        <a href="https://www.github.com/stephan-wenninger"><i class="fa-brands fa-github fa-3x"></i></a>
+        <a href="https://www.linkedin.com/in/stephan-wenninger"><i class="fa-brands fa-linkedin fa-3x"></i></a>
+      </div>
       </div>
     </nav>
     <main>
-      <div class="row yellow">
+      <div class="row bg1">
         <h2 id="demo">Virtual Human Demo</h2>
         <p class="caption description">
-          During my time as a Ph.D. candidate, I developed a low-cost reconstruction method for realistic 3D avatars, a statistical model for body-weight modification to investigate the potential of <a href="https://hci.uni-wuerzburg.de/projects/vitras/" target="_blank">VR therapy in obesity treatment</a>, as well as anatomical representations of virtual humans.
+          During my time as a Ph.D. candidate, I developed a low-cost reconstruction method for realistic 3D avatars, a statistical model for body-weight modification to investigate the potential of <a href="https://hci.uni-wuerzburg.de/projects/vitras/">VR therapy in obesity treatment</a>, as well as anatomical representations of virtual humans.
           Click the Load Demo button for an interactive application that showcases various parts of our virtual human reconstruction pipeline.
         </p>
         <div class="loading-wrapper">
-          <button class="load_demo_button button" id="load_demo" disabled>Load demo [Coming soon]</button>
+          <button class="load_demo_button button" id="load_demo">Load demo (66mb)</button>
           <div class="lds-grid" id="loading" style="display:none"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>  
         </div>
         <script type="text/javascript">
-          // var button = document.getElementById('load_demo');
-          // button.onclick = function() {
-          //   document.getElementById("loading").style.display="inline-block"
-          //   document.getElementById("load_demo").style.display="none"
-          //   var script = document.createElement("script");
-          //   script.src = "assets/demos/AvatarDemo.js";
+          var button = document.getElementById('load_demo');
+          button.onclick = function() {
+            document.getElementById("loading").style.display="inline-block"
+            document.getElementById("load_demo").style.display="none"
+            var script = document.createElement("script");
+            script.src = "assets/demos/AvatarDemo.js";
     
-          //   // append and execute script
-          //   document.documentElement.firstChild.appendChild(script);
-          // };
+            // append and execute script
+            document.documentElement.firstChild.appendChild(script);
+          };
         </script>
-        <!-- <div class="emscripten" id="status"></div> -->
+        <div class="emscripten" id="status"></div>
         <div id="canvas">
-          <!-- <canvas class="emscripten" id="canvas_canvas" oncontextmenu="event.preventDefault()"></canvas> -->
+          <canvas class="emscripten" id="canvas_canvas" oncontextmenu="event.preventDefault()"></canvas>
         </div>
         <!-- WebGL setup -->
-        <!-- <script type='text/javascript' src='assets/demos/emscripten_webgl_setup.js'></script> -->
+        <script type='text/javascript' src='assets/demos/emscripten_webgl_setup.js'></script>
       </div>
-      <div class="row green">
+      <div class="row bg2">
       <h2 id="publications">Publications</h2>
       <div class="grid">
         <article>
